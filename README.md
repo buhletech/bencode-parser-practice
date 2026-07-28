@@ -15,10 +15,11 @@
 
 
 *Structure*
-  bencode_int.py — decodes bencoded integers
-  bencode_string.py — decodes bencoded strings
-  bencode_list.py — decodes bencoded lists (of strings and integers)
-  bencode_dict.py — decodes bencoded dictionaries (including string, integer, and list values)
+
+  - bencode_int.py — decodes bencoded integers
+  - bencode_string.py — decodes bencoded strings
+  - bencode_list.py — decodes bencoded lists (of strings and integers)
+  - bencode_dict.py — decodes bencoded dictionaries (including string, integer, and list values)
 
   Each file can be run directly to test a single input from the console.
 
