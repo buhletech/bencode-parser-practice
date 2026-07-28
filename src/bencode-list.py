@@ -42,11 +42,3 @@ def encode_list(obj):
                 raise ValueError("Malformed input")
     return arr
 
-def decode_list(obj):
-    pos = 1
-    num = 0
-    neg = False
-    arr = []
-
-value = input()
-print(encode_list(value))

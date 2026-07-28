@@ -98,6 +98,3 @@ def encode_dict(obj):
             raise ValueError("Malformed input")
 
     return dict
-
-value = input()
-print(encode_dict(value))

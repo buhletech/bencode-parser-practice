@@ -16,7 +16,3 @@ def encode_string(obj):
     return word
 
 def decode_string(obj):
-    
-
-value = input()
-print(encode_string(value))
