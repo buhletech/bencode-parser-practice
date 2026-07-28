@@ -4,9 +4,9 @@ Bencoding From Scratch (Learning Project)
 
 Purpose
 
-  This project is not intended to be a production ready or optimized bencoding library. There are already mature, well-tested libraries for this (e.g. bencodepy, bencode.py) that should be used for any real-world application.
+  This project is not intended to be a production ready or optimized bencoding library. There are already mature, well-tested libraries that should be used for any real-world application.
 
-  The goal here was purely educational: to build an intuition for manual string parsing using indices and pointers how length-prefixed formats avoid ambiguous delimiters recursive parsing of nested data structures (lists and dictionaries containing other lists/dictionaries)
+  The goal here was purely educational: To build an intuition for manual string parsing using indices and pointers how length-prefixed formats avoid ambiguous delimiters recursive parsing of nested data structures (lists and dictionaries containing other lists/dictionaries)
 
 What is Bencoding?
 
