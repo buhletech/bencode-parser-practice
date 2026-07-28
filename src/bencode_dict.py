@@ -1,0 +1,103 @@
+def encode_dict(obj):
+    pos = 1
+    arr = []
+    dict = {}
+    key = None
+
+    if obj[0] != "d" or obj[-1] != "e":
+        raise ValueError("Malformed input")
+
+    while obj[pos] != "e":
+        if obj[pos] == "i":
+            end = obj.index("e", pos)
+            num_str = obj[pos+1:end]
+
+            neg = num_str.startswith("-")
+            digits = num_str[1:] if neg else num_str
+
+            if not digits.isdigit():
+                raise ValueError("Malformed input")
+
+            num = int(digits)
+            val = -num if neg else num
+            pos = end + 1
+
+            dict[key] = val
+            key = None
+
+        elif obj[pos].isdigit():
+            colon = obj.index(":", pos)
+            str_size = obj[pos:colon]
+
+            if not str_size.isdigit():
+                raise ValueError("Malformed input")
+
+            size = int(str_size)
+            data_start = colon + 1
+            data_end = data_start + size
+            data = obj[data_start:data_end]
+
+            if not len(data) == size:
+                raise ValueError("Size mismatch")
+
+            pos = data_end
+
+            if key is None:
+                key = data
+            else:
+                dict[key] = data
+                key = None
+
+        elif obj[pos] == "l":
+            #skip '1'
+            list_pos = pos +1
+
+            while obj[list_pos] != "e":
+                if obj[list_pos] == "i":
+                    end = obj.index("e", list_pos)
+                    num_str = obj[list_pos+1:end]
+
+                    neg = num_str.startswith("-")
+                    digits = num_str[1:] if neg else num_str
+
+                    if not digits.isdigit():
+                        raise ValueError("Malformed input")
+
+                    num = int(digits)
+                    arr.append(-num if neg else num)
+                    list_pos = end + 1
+
+                elif obj[list_pos].isdigit():
+                    colon = obj.index(":", list_pos)
+                    str_size = obj[list_pos:colon]
+
+                    if not str_size.isdigit():
+                        raise ValueError("Malformed input")
+
+                    size = int(str_size)
+                    data_start = colon + 1
+                    data_end = data_start + size
+                    data = obj[data_start:data_end]
+
+                    if not len(data) == size:
+                        raise ValueError("Size mismatch")
+
+                    arr.append(data)
+                    list_pos = data_end
+
+                else:
+                    raise ValueError("Malformed input")
+
+            #skip closing 'e' of the list
+            pos = list_pos + 1
+
+            dict[key] = arr
+            key = None
+
+        else:
+            raise ValueError("Malformed input")
+
+    return dict
+
+value = input()
+print(encode_dict(value))
