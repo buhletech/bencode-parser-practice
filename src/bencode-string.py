@@ -1,4 +1,4 @@
-spam
+
 def encode_string(obj):
     word = ""
 
@@ -16,3 +16,12 @@ def encode_string(obj):
     return word
 
 def decode_string(obj):
+    pos = 0
+    new_string = ""
+
+    if obj[pos].isalpha():
+        new_string += str(len(obj))
+        new_string += ":"
+        new_string += obj
+
+    return new_string

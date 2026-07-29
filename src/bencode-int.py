@@ -40,4 +40,6 @@ def decode(obj):
 
     return num_str
 
+value = input()
+print(decode(value))
 
