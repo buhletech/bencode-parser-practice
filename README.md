@@ -6,7 +6,7 @@
 
   This project is not intended to be a production ready or optimized bencoding library. There are already mature, well-tested libraries that should be used for any real-world application.
 
-  The goal here was purely educational: To build an intuition for manual string parsing using indices and pointers how length-prefixed formats avoid ambiguous delimiters recursive parsing of nested data structures (lists and dictionaries containing other lists/dictionaries)
+  The goal here was purely educational: To build an intuition for manual string parsing using indices and pointers how length-prefixed formats avoid ambiguous delimiters
 
 *What is Bencoding?*
 
@@ -16,10 +16,10 @@
 
 *Structure*
 
-  - bencode_int.py — decodes bencoded integers
-  - bencode_string.py — decodes bencoded strings
-  - bencode_list.py — decodes bencoded lists (of strings and integers)
-  - bencode_dict.py — decodes bencoded dictionaries (including string, integer, and list values)
+  - bencode_int.py — encodes/decodes bencoded integers
+  - bencode_string.py — encodes bencoded strings
+  - bencode_list.py — encodes bencoded lists (of strings and integers). Nested lists are not supported
+  - bencode_dict.py — encodes bencoded dictionaries (including string, integer, and list values)
 
   Each file can be run directly to test a single input from the console.
 
