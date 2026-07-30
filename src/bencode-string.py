@@ -24,4 +24,7 @@ def decode_string(obj):
         new_string += ":"
         new_string += obj
 
+    sep = new_string.split(":", 1)
+    if not pos == len(sep):
+        raise ValueError("Size mismatch")
     return new_string

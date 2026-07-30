@@ -21,7 +21,6 @@ def encode(obj):
 
 def decode(obj):
     pos = 0
-    num = 0
     num_str = ""
 
     while pos <= len(obj):
@@ -39,7 +38,4 @@ def decode(obj):
             break
 
     return num_str
-
-value = input()
-print(decode(value))
 
