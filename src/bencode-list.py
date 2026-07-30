@@ -50,6 +50,8 @@ def decode_list(obj):
         raise ValueError("Malformed input")
 
     new_word = "l"
+    
+    #position of closing "]"
     end = len(obj) - 1
 
     while pos < end:
