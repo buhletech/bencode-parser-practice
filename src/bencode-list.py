@@ -4,6 +4,7 @@ def encode_list(obj):
     num = 0
     neg = False
     arr = []
+    arr2 = []
 
     if obj[0] != "l" or obj[-1] != "e":
         raise ValueError("Malformed input")
@@ -23,7 +24,7 @@ def encode_list(obj):
                 arr.append(-num if neg else num)
                 pos = end + 1
 
-            if obj[pos].isdigit():
+            elif obj[pos].isdigit():
                 colon = obj.index(":", pos)
                 size_str = obj[pos:colon]
 
@@ -42,3 +43,5 @@ def encode_list(obj):
                 raise ValueError("Malformed input")
     return arr
 
+value = input()
+print(encode_list(value))
