@@ -98,3 +98,59 @@ def encode_dict(obj):
             raise ValueError("Malformed input")
 
     return dict
+
+def decode_dict(obj):
+    pos = 1
+
+    if obj[0] != "{" or obj[-1] != "}":
+        raise ValueError("Malformed input")
+
+    end = len(obj)-1
+    word_str = "d"
+
+    while pos < end:
+        if obj[pos] == ":" or obj[pos] == " " or obj[pos] == ",":
+            pos +=1
+            continue
+
+        if obj[pos] == '"':
+            end_quote = obj.index('"', pos+1)
+            string_val = obj[pos+1:end_quote]
+
+            word_str += f"{len(string_val)}:{string_val}"
+            pos = end_quote + 1
+
+
+
+        #incomplete
+        elif obj[pos].isdigit() or obj[pos] == "-":
+            pass
+
+
+
+        elif obj[pos] == "[":
+            word_str += "l"
+            close_par = obj.index("]", pos+1)
+            #move past "["
+            pos +=1
+
+            while pos < close_par:
+                if obj[pos] == '"':
+                    end_quote2 = obj.index('"', pos+1)
+                    string_val2 = obj[pos+1:end_quote2]
+
+                    word_str += f"{len(string_val2)}:{string_val2}"
+                    pos = end_quote2 + 1
+
+
+                #incomplete
+                elif obj[pos].isdigit() or obj[pos] == "-":
+                    pass
+
+
+
+            word_str += "e"
+            pos = close_par +1
+
+    word_str += "e"
+    return word_str
