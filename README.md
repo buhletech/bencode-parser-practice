@@ -2,7 +2,7 @@
 
   A hand-written Python implementation of Bencoding (the encoding format used by BitTorrent), built purely as an exercise to understand string parsing, indexing, and recursive data formats.
 
-## *Purpose
+## Purpose
 
   This project is not intended to be a production ready or optimized bencoding library. There are already mature, well-tested libraries that should be used for any real-world application.
 
