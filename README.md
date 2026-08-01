@@ -1,8 +1,8 @@
-## **Bencoding From Scratch (Learning Project)**
+## Bencoding From Scratch (Learning Project)
 
   A hand-written Python implementation of Bencoding (the encoding format used by BitTorrent), built purely as an exercise to understand string parsing, indexing, and recursive data formats.
 
-# **Purpose**
+# *Purpose
 
   This project is not intended to be a production ready or optimized bencoding library. There are already mature, well-tested libraries that should be used for any real-world application.
 
@@ -14,7 +14,7 @@
   Bencoding is most commonly used in torrent files, and as such is part of the BitTorrent specification. These metadata files are simply bencoded dictionaries.
 
 
-# **Structure**
+# Structure
 
   - bencode_int.py — encodes/decodes bencoded integers
   - bencode_string.py — encodes bencoded strings
@@ -23,6 +23,6 @@
 
   Each file can be run directly to test a single input from the console.
 
-# **Disclaimer**
+# Disclaimer
 
   This code was written as a learning exercise while studying parsing techniques. It has not been rigorously tested against edge cases and should not be used as a reference implementation of the Bencoding spec.
