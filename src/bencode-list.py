@@ -68,6 +68,7 @@ def decode_list(obj):
 
         elif obj[pos].isdigit() or obj[pos] == "-":
             num_start = pos
+            #let's say it starts with a neg then it adds one to position to check if it's a digit then the while loop is executed
             pos += 1
             while pos < end and obj[pos].isdigit():
                 pos += 1
