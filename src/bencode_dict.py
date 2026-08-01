@@ -120,11 +120,14 @@ def decode_dict(obj):
             word_str += f"{len(string_val)}:{string_val}"
             pos = end_quote + 1
 
-
-
-        #incomplete
         elif obj[pos].isdigit() or obj[pos] == "-":
-            pass
+            num_start = pos
+            #let's say it starts with a neg then it adds one to position to check if it's a digit then the while loop is executed
+            pos += 1
+            while pos < end and obj[pos].isdigit():
+                pos += 1
+            num_str = obj[num_start:pos]
+            word_str += f"i{num_str}e"
 
 
 
@@ -142,12 +145,14 @@ def decode_dict(obj):
                     word_str += f"{len(string_val2)}:{string_val2}"
                     pos = end_quote2 + 1
 
-
-                #incomplete
                 elif obj[pos].isdigit() or obj[pos] == "-":
-                    pass
-
-
+                    num_start = pos
+                    #let's say it starts with a neg then it adds one to position to check if it's a digit then the while loop is executed
+                    pos += 1
+                    while pos < end and obj[pos].isdigit():
+                        pos += 1
+                    num_str = obj[num_start:pos]
+                    word_str += f"i{num_str}e"
 
             word_str += "e"
             pos = close_par +1
